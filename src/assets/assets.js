@@ -1,4 +1,5 @@
-import p_img1 from './p_img1.png'
+
+import p_img1_1 from './p_img1_1.jpg'
 import p_img2_1 from './p_img2_1.png'
 import p_img2_2 from './p_img2_2.png'
 import p_img2_3 from './p_img2_3.png'
@@ -101,7 +102,7 @@ export const products = [
         name: "Women Round Neck Cotton Top",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 100,
-        image: [p_img1],
+        image: [p_img1_1],
         category: "Women",
         subCategory: "Topwear",
         sizes: ["S", "M", "L"],

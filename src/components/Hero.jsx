@@ -1,16 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 
 const Hero = () => {
@@ -66,3 +53,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+
+
