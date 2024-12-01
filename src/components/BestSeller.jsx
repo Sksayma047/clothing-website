@@ -49,7 +49,7 @@
 
 import React, { useContext, useEffect, useState } from 'react';
 import Title from './Title';
-import ProductItem from './ProductItem';
+// import ProductItem from './ProductItem';
 import { ShopContext } from '../context/ShopContext';
 
 const BestSeller = () => {
@@ -57,11 +57,9 @@ const BestSeller = () => {
   const [bestSeller, setBestSeller] = useState([]);
 
   useEffect(() => {
-    if (products) {
-      const bestProduct = products.filter((item) => item.bestSeller);
-      setBestSeller(bestProduct.slice(1, 5));
-    }
-  }, [products]); // added products as dependency
+   const bestSeller = products.filter((item) => (item.bestSeller));
+   setBestSeller(bestSeller.slice(0,5));
+  },[]) // added products as dependency
 
   return (
     <div className='my-10 px-4 sm:px-6 lg:px-8'>
@@ -73,22 +71,17 @@ const BestSeller = () => {
       </div>
       
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
-        {bestSeller.length > 0 ? (
-          bestSeller.map((item) => (
+        {
+          bestSeller.map((item,index) => (
             <ProductItem
-              key={item._id}
-              id={item._id}
+              key={index} 
+               id={item._id}
               name={item.name}
               image={item.image}
               price={item.price}
             />
           ))
-        ) : (
-          <p className='col-span-full text-center text-gray-500'>
-            No best sellers available.
-            bestseller length is 5 and show the products
-          </p>
-        )}
+        }
       </div>
     </div>
   );
